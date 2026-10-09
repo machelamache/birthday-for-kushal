@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Kushal, With Love — Roxanne</title>
+<style>
+:root { color-scheme: light dark; --bg:#190d16; --panel:#281421; --text:#fff4f7; --muted:#d7b8c5; --rose:#ff8eae; --rose2:#ffbfd0; --line:#684052; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Georgia, 'Times New Roman', serif; }
+button { font:inherit; cursor:pointer; }
+#app { min-height:100vh; padding:28px 18px 48px; display:flex; justify-content:center; align-items:center; overflow:hidden; position:relative; background:radial-gradient(ellipse at top, #54213b 0%, #281421 42%, #190d16 78%); }
+.sparkles { position:absolute; inset:0; pointer-events:none; overflow:hidden; }
+.sparkle { position:absolute; color:#ffc0d4; opacity:.65; animation:float 7s ease-in-out infinite; }
+@keyframes float { 0%,100%{transform:translateY(0) rotate(0deg);opacity:.35} 50%{transform:translateY(-22px) rotate(12deg);opacity:.9} }
+.card { width:min(100%,650px); position:relative; z-index:1; text-align:center; border:1px solid var(--line); border-radius:28px; padding:clamp(25px,6vw,54px); background:rgba(32,15,26,.88); box-shadow:0 25px 80px #0005; }
+.eyebrow { font-family:Arial,sans-serif; text-transform:uppercase; letter-spacing:.22em; font-size:.72rem; color:var(--rose2); }
+h1 { font-size:clamp(2.3rem,8vw,4.6rem); line-height:1.02; font-weight:normal; margin:18px 0; }
+.heart { font-size:2.4rem; color:var(--rose); display:block; margin:14px; animation:beat 1.5s infinite; }
+@keyframes beat { 0%,100%{transform:scale(1)} 10%,30%{transform:scale(1.12)} 20%,40%{transform:scale(1)} }
+p { color:var(--muted); font-size:1.08rem; line-height:1.8; }
+.primary { border:0; border-radius:999px; background:var(--rose); color:#321323; padding:14px 24px; margin-top:18px; font-family:Arial,sans-serif; font-weight:bold; box-shadow:0 8px 24px #ff8eae30; }
+.primary:hover { transform:translateY(-2px); }
+.hidden { display:none; }
+.letter { text-align:left; margin-top:26px; padding:24px; border:1px solid var(--line); border-radius:18px; background:#ffffff06; }
+.letter p { font-size:1.02rem; }
+.signature { text-align:right; color:var(--rose2); font-style:italic; font-size:1.2rem; }
+.memory-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:22px 0; }
+.memory { min-height:92px; padding:12px 8px; border:1px solid var(--line); border-radius:14px; display:flex; flex-direction:column; justify-content:center; gap:7px; color:var(--rose2); font-size:.9rem; background:#ffffff05; }
+.memory span { font-size:1.5rem; }
+.footer { margin-top:25px; font-family:Arial,sans-serif; font-size:.72rem; letter-spacing:.12em; color:#a98596; text-transform:uppercase; }
+@media(max-width:420px){ .memory-grid{grid-template-columns:1fr;} .memory{min-height:65px; flex-direction:row; align-items:center;} }
+</style>
+</head>
+<body>
+<main id="app">
+  <div class="sparkles" aria-hidden="true" id="sparkles"></div>
+  <section class="card">
+    <div class="eyebrow">A little something made just for you</div>
+    <span class="heart">♥</span>
+    <h1>Happy Birthday,<br><span style="color:var(--rose)">Kushal</span></h1>
+    <p>Even from miles away, you have a special place in my heart. I made a little corner of the internet just for you.</p>
+    <button class="primary" id="openBtn">Open your surprise ✉</button>
+    <div id="surprise" class="hidden">
+      <div class="letter">
+        <p>To my favorite person, Kushal,</p>
+        <p>Happy birthday, my love. I wish I could be beside you today, see your smile up close, and give you the biggest hug. Since distance won’t let me do that right now, I made you this little surprise to remind you that you are being celebrated, missed, and loved.</p>
+        <p>Being far away is not always easy. Sometimes I wish I could turn all these miles into just one little step and be right there with you. But even across the distance, you can still make me smile, and I’m grateful for every conversation, every laugh, and every little memory we’re making.</p>
+        <p>If I could wish one thing for you, it would be for you to see yourself through my eyes, even for a moment. I hope this new year of your life brings you peace, courage, good surprises, and so many reasons to be proud of yourself. You deserve kindness on the hard days, too.</p>
+        <p>Until the day distance is no longer between us, please remember that you matter to me. Here’s to more late-night talks, more silly moments, more dreams, and the day we get to make memories side by side. Today is your day, Kushal. I hope it feels as special as you are to me. ♡</p>
+        <p class="signature">With all my love, ♡<br>Roxanne Leïla</p>
+      </div>
+      <h2 style="font-weight:normal;margin-top:30px">A few little reminders</h2>
+      <div class="memory-grid">
+        <div class="memory"><span>♡</span>You are loved</div>
+        <div class="memory"><span>✧</span>You are appreciated</div>
+        <div class="memory"><span>☾</span>You make life sweeter</div>
+      </div>
+      <p>And if you ever have a bad day, come back here and remember: someone far away is still cheering for you, always.</p>
+      <button class="primary" id="musicBtn" aria-pressed="false">♫ Play a little birthday melody</button>
+      <p style="font-size:.85rem">A tiny melody made by this page — tap again to pause it.</p>
+      <button class="primary" id="finalBtn">One last little thing… ♡</button>
+      <div id="finalMessage" class="letter hidden" style="text-align:center">
+        <span class="heart">♡</span>
+        <h2 style="font-weight:normal">No distance can make you less special.</h2>
+        <p>If I could send you one thing through the screen, it would be a hug that lasts a little longer than words can say.</p>
+        <p><strong>Happy birthday, Kushal.</strong> I’m sending you all my love, from my side of the world to yours.</p>
+        <p class="signature">Always cheering for you,<br>Roxanne Leïla ♡</p>
+      </div>
+      <button class="primary" id="againBtn">Read it again ♡</button>
+    </div>
+    <div class="footer">Made with love · Just for you</div>
+  </section>
+</main>
+<script>
+const sparkles = document.getElementById('sparkles');
+for (let i=0; i<24; i++) {
+  const star = document.createElement('span');
+  star.className = 'sparkle';
+  star.textContent = ['✦','♡','·','✧'][i%4];
+  star.style.left = (Math.random()*100)+'%';
+  star.style.top = (Math.random()*100)+'%';
+  star.style.fontSize = (12+Math.random()*18)+'px';
+  star.style.animationDelay = (Math.random()*6)+'s';
+  star.style.animationDuration = (5+Math.random()*5)+'s';
+  sparkles.appendChild(star);
+}
+const surprise = document.getElementById('surprise');
+document.getElementById('openBtn').addEventListener('click', () => {
+  surprise.classList.remove('hidden');
+  document.getElementById('openBtn').classList.add('hidden');
+  surprise.scrollIntoView({behavior:'smooth', block:'nearest'});
+});
+document.getElementById('againBtn').addEventListener('click', () => {
+  surprise.scrollIntoView({behavior:'smooth', block:'start'});
+});
+document.getElementById('finalBtn').addEventListener('click', () => {
+  const finalMessage = document.getElementById('finalMessage');
+  finalMessage.classList.toggle('hidden');
+  document.getElementById('finalBtn').textContent = finalMessage.classList.contains('hidden') ? 'One last little thing… ♡' : 'Hide my secret message ♡';
+  if (!finalMessage.classList.contains('hidden')) finalMessage.scrollIntoView({behavior:'smooth', block:'nearest'});
+});
+let audioContext = null;
+let melodyTimer = null;
+let melodyStep = 0;
+let melodyPlaying = false;
+const musicBtn = document.getElementById('musicBtn');
+const notes = [523.25, 659.25, 783.99, 659.25, 587.33, 698.46, 880, 698.46];
+function playNote() {
+  if (!melodyPlaying || !audioContext) return;
+  const osc = audioContext.createOscillator();
+  const gain = audioContext.createGain();
+  osc.type = 'sine';
+  osc.frequency.value = notes[melodyStep % notes.length];
+  gain.gain.setValueAtTime(0.0001, audioContext.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.07, audioContext.currentTime + 0.04);
+  gain.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + 0.48);
+  osc.connect(gain); gain.connect(audioContext.destination);
+  osc.start(); osc.stop(audioContext.currentTime + 0.5);
+  melodyStep++;
+}
+musicBtn.addEventListener('click', async () => {
+  if (!melodyPlaying) {
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    if (!AudioCtx) { musicBtn.textContent = 'Music is not supported in this browser'; return; }
+    audioContext = audioContext || new AudioCtx();
+    await audioContext.resume();
+    melodyPlaying = true;
+    musicBtn.textContent = '♫ Pause the birthday melody';
+    musicBtn.setAttribute('aria-pressed', 'true');
+    playNote();
+    melodyTimer = setInterval(playNote, 520);
+  } else {
+    melodyPlaying = false;
+    clearInterval(melodyTimer);
+    if (audioContext) await audioContext.suspend();
+    musicBtn.textContent = '♫ Play a little birthday melody';
+    musicBtn.setAttribute('aria-pressed', 'false');
+  }
+});
+</script>
+</body>
+</html>
